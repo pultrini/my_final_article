@@ -1,0 +1,14 @@
+artifact_uri: file:///home/users/u12559743/Documentos/my_final_article/mlruns/225338329162365926/33504f4d5fda435fb6d94eca93413b35/artifacts
+end_time: 1755128024304
+entry_point_name: ''
+experiment_id: '225338329162365926'
+lifecycle_stage: active
+run_id: 33504f4d5fda435fb6d94eca93413b35
+run_name: PathMNIST_normal_run
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1755127458316
+status: 4
+tags: []
+user_id: u12559743

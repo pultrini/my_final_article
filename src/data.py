@@ -43,7 +43,7 @@ def data_transform(dataset: str) -> DataLoader:
     
     train_loader = DataLoader(
         dataset=dataset_train,
-        batch_size=64,
+        batch_size=128,
         shuffle=True,
         drop_last=True
     )   

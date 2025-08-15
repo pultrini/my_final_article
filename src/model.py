@@ -3,7 +3,7 @@ import torch
 from torch import nn
 from medmnist import INFO
 # %%
-def create_model(dataset:str):
+def create_model(dataset:str, type:str = None):
     '''
     Retorna o modelo adaptado aos devidos datasets que setão utilizados.
     args:
@@ -37,4 +37,8 @@ def create_model(dataset:str):
         in_features=original_num_features,
         out_features=n_classes
     )
+    if type == 'loss':
+        pre_train_loss = torch.load('model/min_loss.pth')
+    if type == 'complexity':
+        pre_train_loss = torch.load('model/max_complexity.pth')
     return efficientnet

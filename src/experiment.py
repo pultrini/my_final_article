@@ -10,7 +10,7 @@ from model import create_model
 from data import data_transform
 from functions import train, validate
 
-def exec_once(dataset_name: str, num_epochs: int, device: str, output_file_path: str, strategy: str = "normal"):
+def exec_once(dataset_name: str, num_epochs: int, device: str, output_file_path: str, strategy: str = "normal", type: str = None):
     """
     Executa uma única rodada de treinamento/validação, encontra as melhores
     métricas e salva o resultado em um arquivo JSON. Também registra tudo no MLflow.
@@ -43,7 +43,7 @@ def exec_once(dataset_name: str, num_epochs: int, device: str, output_file_path:
         train_loader, val_loader, _ = data_transform(dataset=dataset_name)
 
         # Modelo/otimizador/loss
-        model = create_model(dataset=dataset_name)
+        model = create_model(dataset=dataset_name, type=type)
         optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
         criterion = nn.CrossEntropyLoss()
 

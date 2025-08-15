@@ -62,11 +62,17 @@ def exec_once(dataset_name: str, num_epochs: int, device: str, output_file_path:
             hist_acc.append(val_acc)
             hist_loss.append(val_loss)
             hist_complexity.append(complexity)
-
+            best_loss = 99999.9
+            best_complexity = -9999.9
             # Log por época no MLflow
             mlflow.log_metric("val_accuracy", float(val_acc), step=epoch)
             mlflow.log_metric("val_loss", float(val_loss), step=epoch)
             mlflow.log_metric("complexity", float(complexity), step=epoch)
+            if val_loss < best_loss:
+                torch.save(model.state_dict(), 'models/min_loss.pth')
+            if complexity > best_complexity:
+                torch.save(model.state_dict(), 'models/max_complexity.pth')
+                
 
         # Agregados finais
         best_accuracy = float(np.max(hist_acc))

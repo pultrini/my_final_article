@@ -2,7 +2,7 @@ import argparse
 from experiment import exec_once
 import torch
 
-DATASET = 'OrganAMNIST'
+DATASET = 'BloodMNIST'
 NUM_EPOCHS = 10
 OUTPUT_FILE = 'results/metrics/metrics_model2.json'
 DEVICE = 'cuda:1' if torch.cuda.is_available() else 'cpu'
@@ -24,5 +24,6 @@ if __name__ == '__main__':
         num_epochs=NUM_EPOCHS,
         device=DEVICE,
         output_file_path=OUTPUT_FILE,
-        strategy=args.strategy
+        strategy=args.strategy,
+        type='loss'
     )

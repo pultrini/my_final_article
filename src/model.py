@@ -25,10 +25,10 @@ def create_model(dataset:str, type:str = None):
         padding=original_conv_stem.padding,
         bias = False
     )
-    if dataset == 'OrganAMNIST':
-        info = INFO['organamnist']
-    elif dataset == 'PathMNIST':
-        info = INFO['pathmnist']
+    if dataset == 'BloodMNIST':
+        info = INFO['bloodmnist']
+    elif dataset == 'TissueMNIST':
+        info = INFO['tissuemnist']
 
     n_classes = len(info['label'])
     original_num_features = efficientnet.classifier.fc.in_features
@@ -38,7 +38,9 @@ def create_model(dataset:str, type:str = None):
         out_features=n_classes
     )
     if type == 'loss':
-        pre_train_loss = torch.load('model/min_loss.pth')
+        pre_train_loss = torch.load('/home/users/u12559743/Documentos/my_final_article/models/min_loss.pth')
+        efficientnet.load_state_dict(pre_train_loss)
     if type == 'complexity':
-        pre_train_loss = torch.load('model/max_complexity.pth')
+        pre_train_complexity = torch.load('/home/users/u12559743/Documentos/my_final_article/models/max_complexity.pth')
+        efficientnet.load_state_dict(pre_train_complexity)
     return efficientnet

@@ -26,7 +26,7 @@ def exec_once(dataset_name: str, num_epochs: int, device: str, output_file_path:
 
     # Define/seleciona o experimento no MLflow
     mlflow.set_tracking_uri("http://127.0.0.1:5000")
-    mlflow.set_experiment(experiment_id=209323633303185421)
+    mlflow.set_experiment(experiment_id=175611549495715788)
 
     # IMPORTANTE: use run_name para criar um novo run (não passe string posicional)
     with mlflow.start_run(run_name=f"{dataset_name}_{strategy}_run"):
@@ -69,9 +69,9 @@ def exec_once(dataset_name: str, num_epochs: int, device: str, output_file_path:
             mlflow.log_metric("val_loss", float(val_loss), step=epoch)
             mlflow.log_metric("complexity", float(complexity), step=epoch)
             if val_loss < best_loss:
-                torch.save(model.state_dict(), 'models/min_loss.pth')
+                torch.save(model.state_dict(), '/home/users/u12559743/Documentos/my_final_article/models/min_loss.pth')
             if complexity > best_complexity:
-                torch.save(model.state_dict(), 'models/max_complexity.pth')
+                torch.save(model.state_dict(), '/home/users/u12559743/Documentos/my_final_article/models/max_complexity.pth')
                 
 
         # Agregados finais

@@ -1,6 +1,6 @@
 # %%
 import os
-from medmnist import OrganAMNIST, PathMNIST
+from medmnist import TissueMNIST, BloodMNIST
 from torchvision.transforms import v2
 import torch
 from torch.utils.data import DataLoader
@@ -24,40 +24,40 @@ def data_transform(dataset: str) -> DataLoader:
     ])
     DATA_ROOT = 'data'
     os.makedirs(DATA_ROOT, exist_ok=True)
-    if dataset == "OrganAMNIST":
-        dataset_train = OrganAMNIST(split='train', download=True,
+    if dataset == 'BloodMNIST':
+        dataset_train = BloodMNIST(split='train', download=True,
                                 root=DATA_ROOT, transform=transform)
-        dataset_val = OrganAMNIST(split='val', download=True,
+        dataset_val = BloodMNIST(split='val', download=True,
                             root=DATA_ROOT, transform=transform)
-        dataset_test = OrganAMNIST(split='test', download=True,
+        dataset_test = BloodMNIST(split='test', download=True,
                             root=DATA_ROOT, transform=transform)
-    elif dataset == "PathMNIST":
-        dataset_train = PathMNIST(split='train', download=True,
+    elif dataset == "TissueMNIST":
+        dataset_train = TissueMNIST(split='train', download=True,
                                 root=DATA_ROOT, transform=transform)
-        dataset_val = PathMNIST(split='val', download=True,
+        dataset_val = TissueMNIST(split='val', download=True,
                             root=DATA_ROOT, transform=transform)
-        dataset_test = PathMNIST(split='test', download=True,
+        dataset_test = TissueMNIST(split='test', download=True,
                             root=DATA_ROOT, transform=transform)
     else:
         raise ValueError("ERROR: Coloque algum dos dois datasets escolhidos 'OrganAMNIST' ou 'PathMNIST'")
     
     train_loader = DataLoader(
         dataset=dataset_train,
-        batch_size=128,
+        batch_size=256,
         shuffle=True,
         drop_last=True
     )   
 
     val_loader = DataLoader(
         dataset=dataset_val,
-        batch_size=64,
+        batch_size=128,
         shuffle=True,
         drop_last=True
     )
 
     test_loader = DataLoader(
         dataset=dataset_test,
-        batch_size=64,
+        batch_size=128,
         shuffle=True,
         drop_last=True
     )

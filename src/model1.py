@@ -2,7 +2,7 @@ import argparse
 from experiment import exec_once
 import torch
 
-DATASET = 'PathMNIST'
+DATASET = 'TissueMNIST'
 NUM_EPOCHS = 10
 OUTPUT_FILE = 'results/metrics/metrics_model1.json'
 # Corrige o device: use 'cuda' ou 'cpu'

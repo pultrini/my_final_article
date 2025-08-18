@@ -1,17 +1,17 @@
 {
     "model1_normal": {
-        "Avg_Max_Accuracy": "90.96 \u00b1 0.96",
-        "Avg_Min_Loss": "0.3009 \u00b1 0.0342",
-        "Avg_Max_Complexity": "0.75 \u00b1 0.01"
+        "Avg_Max_Accuracy": "87.47 \u00b1 0.77",
+        "Avg_Min_Loss": "0.4563 \u00b1 0.0629",
+        "Avg_Max_Complexity": "0.83 \u00b1 0.00"
     },
     "model2_complexity": {
-        "Avg_Max_Accuracy": "98.30 \u00b1 0.35",
-        "Avg_Min_Loss": "0.0583 \u00b1 0.0147",
-        "Avg_Max_Complexity": "0.80 \u00b1 0.00"
+        "Avg_Max_Accuracy": "97.82 \u00b1 0.38",
+        "Avg_Min_Loss": "0.0880 \u00b1 0.0167",
+        "Avg_Max_Complexity": "0.83 \u00b1 0.00"
     },
     "model3_loss": {
-        "Avg_Max_Accuracy": "97.82 \u00b1 0.13",
-        "Avg_Min_Loss": "0.0891 \u00b1 0.0122",
-        "Avg_Max_Complexity": "0.80 \u00b1 0.00"
+        "Avg_Max_Accuracy": "97.62 \u00b1 0.56",
+        "Avg_Min_Loss": "0.0929 \u00b1 0.0131",
+        "Avg_Max_Complexity": "0.83 \u00b1 0.00"
     }
 }

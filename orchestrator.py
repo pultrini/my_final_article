@@ -61,12 +61,12 @@ print(f"Iniciando loop de {MAX_ITERATIONS} iterações...")
 
 for iteration in range(1, MAX_ITERATIONS + 1):
     print(f"\n===== Iteração Estatística {iteration}/{MAX_ITERATIONS} =====")
-    seed = BASE_SEED + iteration
+    #seed = BASE_SEED + iteration
     for model in MODELS:
         args = [
             '--strategy', model['strategy'],
             '--round', str(iteration),
-            '--seed', str(seed)
+            #'--seed', str(seed)
         ]
         run_script(model['script'], args= args)
         metrics_per_model = {}

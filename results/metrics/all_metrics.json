@@ -1,70 +1,19 @@
 {
     "iteration_1": {
         "model1_normal": {
-            "Max_accuracy": 66.97520380434783,
-            "Min_loss": 0.926852389846159,
-            "Max_complexity": 0.8221823873474361
+            "Max_accuracy": 68.35512907608695,
+            "Min_loss": 0.8738700507775597,
+            "Max_complexity": 0.8055755759340969
         },
         "model2_complexity": {
-            "Max_accuracy": 88.58173076923077,
-            "Min_loss": 0.4392192317889287,
-            "Max_complexity": 0.7537680156981905
+            "Max_accuracy": 89.7235576923077,
+            "Min_loss": 0.28467622284705824,
+            "Max_complexity": 0.7352815793720605
         },
         "model3_loss": {
-            "Max_accuracy": 88.22115384615384,
-            "Min_loss": 0.5625249147415161,
-            "Max_complexity": 0.752910605036813
-        }
-    },
-    "iteration_2": {
-        "model1_normal": {
-            "Max_accuracy": 68.12160326086956,
-            "Min_loss": 0.9040137040226356,
-            "Max_complexity": 0.820908087754258
-        },
-        "model2_complexity": {
-            "Max_accuracy": 88.58173076923077,
-            "Min_loss": 0.4383825659751892,
-            "Max_complexity": 0.7529627673876483
-        },
-        "model3_loss": {
-            "Max_accuracy": 89.00240384615384,
-            "Min_loss": 0.5415431329837213,
-            "Max_complexity": 0.7519172390550722
-        }
-    },
-    "iteration_3": {
-        "model1_normal": {
-            "Max_accuracy": 66.58882472826087,
-            "Min_loss": 0.9347998933947604,
-            "Max_complexity": 0.8271690305106961
-        },
-        "model2_complexity": {
-            "Max_accuracy": 90.08413461538461,
-            "Min_loss": 0.394993415245643,
-            "Max_complexity": 0.7558058589269613
-        },
-        "model3_loss": {
-            "Max_accuracy": 90.14423076923077,
-            "Min_loss": 0.4855022430419922,
-            "Max_complexity": 0.7556729694522795
-        }
-    },
-    "iteration_4": {
-        "model1_normal": {
-            "Max_accuracy": 66.36803668478261,
-            "Min_loss": 0.9616912347467049,
-            "Max_complexity": 0.8270949645507937
-        },
-        "model2_complexity": {
-            "Max_accuracy": 87.74038461538461,
-            "Min_loss": 0.4696805981489328,
-            "Max_complexity": 0.7564505762603286
-        },
-        "model3_loss": {
-            "Max_accuracy": 86.41826923076923,
-            "Min_loss": 0.6032085808423849,
-            "Max_complexity": 0.7559320049575103
+            "Max_accuracy": 90.7451923076923,
+            "Min_loss": 0.37657570036558,
+            "Max_complexity": 0.7324459826468969
         }
     }
 }

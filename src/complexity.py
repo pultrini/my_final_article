@@ -9,13 +9,17 @@ def normalize_data(data):
 
 def calculate_probabilities(data, num_bins):
     """ Calculate the probability distribution of the data. """
-    counts, _ = np.histogram(data, bins=num_bins, density=True)
+    counts, _ = np.histogram(data, bins=num_bins, density=False)
+    total = np.sum(counts)
+    if total == 0:
+        return np.zeros(num_bins)
     probabilities = counts/np.sum(counts)
     return probabilities[probabilities > 0]  # Remove zero probabilities
 
 def shannon_entropy(probabilities):
     """ Calculate the Shannon entropy. """
-    return -np.sum(probabilities * np.log(probabilities))
+    p_nonzero = probabilities[probabilities > 0]
+    return -np.sum(probabilities * np.log(p_nonzero))
 
 def disequilibrium(probabilities, num_bins):
     """ Calculate the disequilibrium. """

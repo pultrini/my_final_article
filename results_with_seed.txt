@@ -1,0 +1,18 @@
+--- RESULTADOS FINAIS ---
+{
+    "model1_normal": {
+        "Avg_Max_Accuracy": "67.13 \u00b1 0.73",
+        "Avg_Min_Loss": "0.9261 \u00b1 0.0243",
+        "Avg_Max_Complexity": "0.82 \u00b1 0.00"
+    },
+    "model2_complexity": {
+        "Avg_Max_Accuracy": "88.98 \u00b1 0.99",
+        "Avg_Min_Loss": "0.4273 \u00b1 0.0325",
+        "Avg_Max_Complexity": "0.75 \u00b1 0.00"
+    },
+    "model3_loss": {
+        "Avg_Max_Accuracy": "88.65 \u00b1 1.43",
+        "Avg_Min_Loss": "0.5323 \u00b1 0.0553",
+        "Avg_Max_Complexity": "0.75 \u00b1 0.00"
+    }
+}

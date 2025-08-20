@@ -1,0 +1,17 @@
+{
+    "model1_normal": {
+        "Avg_Max_Accuracy": "67.54 \u00b1 0.88",
+        "Avg_Min_Loss": "0.9311 \u00b1 0.0244",
+        "Avg_Max_Complexity": "0.82 \u00b1 0.00"
+    },
+    "model2_complexity": {
+        "Avg_Max_Accuracy": "86.07 \u00b1 0.55",
+        "Avg_Min_Loss": "0.5748 \u00b1 0.0342",
+        "Avg_Max_Complexity": "0.70 \u00b1 0.01"
+    },
+    "model3_loss": {
+        "Avg_Max_Accuracy": "86.97 \u00b1 0.99",
+        "Avg_Min_Loss": "0.6785 \u00b1 0.0837",
+        "Avg_Max_Complexity": "0.70 \u00b1 0.01"
+    }
+}

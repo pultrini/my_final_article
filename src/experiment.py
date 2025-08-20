@@ -26,7 +26,7 @@ def exec_once(dataset_name: str, num_epochs: int, device: str, output_file_path:
 
     # Define/seleciona o experimento no MLflow
     mlflow.set_tracking_uri("http://127.0.0.1:5000")
-    mlflow.set_experiment(experiment_id=175611549495715788)
+    mlflow.set_experiment(experiment_id=816313002547210260)
 
     # IMPORTANTE: use run_name para criar um novo run (não passe string posicional)
     with mlflow.start_run(run_name=f"{dataset_name}_{strategy}_run"):
@@ -52,7 +52,7 @@ def exec_once(dataset_name: str, num_epochs: int, device: str, output_file_path:
 
         for epoch in range(1, num_epochs + 1):
             # train retorna: epoch_loss_train, epoch_acc_train, entropy, disequilibrium, complexity
-            _, _, _, _, complexity = train(
+            _, _, entropy, disequilibrium, complexity = train(
                 model, train_loader, criterion, optimizer, device, dataset_name=dataset_name
             )
             val_loss, val_acc = validate(model, val_loader, criterion, device)
@@ -65,13 +65,18 @@ def exec_once(dataset_name: str, num_epochs: int, device: str, output_file_path:
             best_loss = 99999.9
             best_complexity = -9999.9
             # Log por época no MLflow
+            #Realizar o tracking do entropy e do disequilinbrium
             mlflow.log_metric("val_accuracy", float(val_acc), step=epoch)
             mlflow.log_metric("val_loss", float(val_loss), step=epoch)
             mlflow.log_metric("complexity", float(complexity), step=epoch)
+            mlflow.log_metric("disequilibrium", float(disequilibrium), step=epoch)
+            mlflow.log_metric('entropy', float(entropy), step=epoch)
             if val_loss < best_loss:
                 torch.save(model.state_dict(), '/home/users/u12559743/Documentos/my_final_article/models/min_loss.pth')
+                best_loss = val_loss
             if complexity > best_complexity:
                 torch.save(model.state_dict(), '/home/users/u12559743/Documentos/my_final_article/models/max_complexity.pth')
+                best_complexity = complexity
                 
 
         # Agregados finais

@@ -3,7 +3,7 @@ from experiment import exec_once
 import torch
 
 DATASET = 'BloodMNIST'
-NUM_EPOCHS = 10
+NUM_EPOCHS = 5
 OUTPUT_FILE = 'results/metrics/metrics_model3.json'
 DEVICE = 'cuda:1' if torch.cuda.is_available() else 'cpu'
 
